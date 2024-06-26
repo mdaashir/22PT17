@@ -6,6 +6,7 @@ public class Main {
         Temperature();
         Distance();
         Interest();
+        Sphere();
     }
 
     private static void Temperature() {
@@ -14,6 +15,7 @@ public class Main {
         System.out.printf("Fahrenheit = %.2f F\n", Fahrenheit);
         float Celsius = (Fahrenheit - 32) * (5.0f / 9.0f);
         System.out.printf("Celsius = %.2f C\n", Celsius);
+        System.out.println();
     }
 
     private static void Distance() {
@@ -22,6 +24,7 @@ public class Main {
         System.out.printf("Kilometers = %.2f KM\n", KiloMeter);
         float Mile = (0.62f * KiloMeter);
         System.out.printf("Miles = %.2f mile\n", Mile);
+        System.out.println();
     }
     private static void Interest() {
         System.out.print("Enter the Principal, Time Period, Rate of Interest: ");
@@ -35,5 +38,16 @@ public class Main {
         float CI = (Principal * (float) Math.pow((1 + (RateOfInterest / 100)), NumberOfYear)) - Principal;
         System.out.printf("Simple Interest = Rs. %.2f\n", SI);
         System.out.printf("Compound Interest = Rs. %.2f\n", CI);
+        System.out.println();
+    }
+    private static void Sphere() {
+        System.out.print("Enter the Radius: ");
+        float Radius = input.nextFloat();
+        System.out.printf("Radius of Sphere = %.2f units\n", Radius);
+        float Volume = (float) ((4.0f / 3.0f) * Math.PI * Math.pow(Radius, 3));
+        float SurfaceArea = (float) (4 * Math.PI * Math.pow(Radius, 2));
+        System.out.printf("Volume of Sphere = %.2f cubic units\n", Volume);
+        System.out.printf("Surface Area of Sphere = %.2f square units\n", SurfaceArea);
+        System.out.println();
     }
 }
