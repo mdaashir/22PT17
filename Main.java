@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         Temperature();
         Distance();
         Interest();
         Sphere();
+        Pizza();
     }
 
     private static void Temperature() {
@@ -26,6 +28,7 @@ public class Main {
         System.out.printf("Miles = %.2f mile\n", Mile);
         System.out.println();
     }
+
     private static void Interest() {
         System.out.print("Enter the Principal, Time Period, Rate of Interest: ");
         float Principal = input.nextFloat();
@@ -40,6 +43,7 @@ public class Main {
         System.out.printf("Compound Interest = Rs. %.2f\n", CI);
         System.out.println();
     }
+
     private static void Sphere() {
         System.out.print("Enter the Radius: ");
         float Radius = input.nextFloat();
@@ -48,6 +52,18 @@ public class Main {
         float SurfaceArea = (float) (4 * Math.PI * Math.pow(Radius, 2));
         System.out.printf("Volume of Sphere = %.2f cubic units\n", Volume);
         System.out.printf("Surface Area of Sphere = %.2f square units\n", SurfaceArea);
+        System.out.println();
+    }
+
+    public static void Pizza() {
+        System.out.print("Enter the Diameter of Pizza, Price: ");
+        float Diameter = input.nextFloat();
+        float Price = input.nextFloat();
+        System.out.printf("Diameter of Pizza = %.2f Inch(s)\n", Diameter);
+        System.out.printf("Price of Pizza = Rs. %.2f\n", Price);
+        float Area = (float) (Math.PI * Math.pow((Diameter / 2), 2));
+        float PricePerSquareInch = Price / Area;
+        System.out.printf("Price per square inch of Pizza = Rs. %.2f\n", PricePerSquareInch);
         System.out.println();
     }
 }
