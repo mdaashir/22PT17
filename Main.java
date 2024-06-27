@@ -9,6 +9,7 @@ public class Main {
         Interest();
         Sphere();
         Pizza();
+        convert();
     }
 
     private static void Temperature() {
@@ -64,6 +65,15 @@ public class Main {
         float Area = (float) (Math.PI * Math.pow((Diameter / 2), 2));
         float PricePerSquareInch = Price / Area;
         System.out.printf("Price per square inch of Pizza = Rs. %.2f\n", PricePerSquareInch);
+        System.out.println();
+    }
+
+    public static void convert() {
+        System.out.print("Enter the Distance between two cities(in Km): ");
+        float Kilometers = input.nextFloat();
+        float Miles = (0.621371f * Kilometers);
+        float Feet = (3280.84f * Kilometers);
+        System.out.printf("Distance between two cities = %.2f Km or %.2f miles or %.2f ft\n", Kilometers, Miles, Feet);
         System.out.println();
     }
 }
