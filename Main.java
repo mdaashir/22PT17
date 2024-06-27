@@ -87,4 +87,17 @@ public class Main {
         System.out.printf("Distance between two cities = %.2f Km or %.2f miles or %.2f ft\n", Kilometers, Miles, Feet);
         System.out.println();
     }
+
+    public static void Slope() {
+        System.out.print("Enter the coordinates of the point (x1, y1): ");
+        float[] Point1 = { input.nextFloat(), input.nextFloat() };
+        System.out.print("Enter the coordinates of the point (x2, y2): ");
+        float[] Point2 = { input.nextFloat(), input.nextFloat() };
+        if (Point1[0] == Point2[0])
+            System.out.println("The points are on the same vertical line.");
+        else {
+            float Slope = (Point2[1] - Point1[1]) / (Point2[0] - Point1[0]);
+            System.out.printf("The slope of the line = %.2f\n", Slope);
+        }
+    }
 }
