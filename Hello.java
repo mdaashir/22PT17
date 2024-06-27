@@ -7,10 +7,10 @@ public class Hello {
         System.out.print("Enter the Diameter of Pizza, Price: ");
         float Diameter = input.nextFloat();
         float Price = input.nextFloat();
-        System.out.printf("Diameter of Pizza = %.2f units\n", Diameter);
+        System.out.printf("Diameter of Pizza = %.2f Inch(s)\n", Diameter);
         System.out.printf("Price of Pizza = Rs. %.2f\n", Price);
-        float Area = (float)(Math.PI * Math.pow((Diameter/2), 2));
-        float PricePerSquareInch = Price/Area;
+        float Area = (float) (Math.PI * Math.pow((Diameter / 2), 2));
+        float PricePerSquareInch = Price / Area;
         System.out.printf("Price per square inch of Pizza = Rs. %.2f\n", PricePerSquareInch);
         System.out.println();
     }
