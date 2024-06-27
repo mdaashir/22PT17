@@ -10,6 +10,7 @@ public class Main {
         Sphere();
         Pizza();
         convert();
+        Lightning();
     }
 
     private static void Temperature() {
@@ -74,6 +75,16 @@ public class Main {
         float Miles = (0.621371f * Kilometers);
         float Feet = (3280.84f * Kilometers);
         System.out.printf("Distance between two cities = %.2f Km or %.2f miles or %.2f ft\n", Kilometers, Miles, Feet);
+        System.out.println();
+    }
+
+    public static void Lightning() {
+        System.out.print("Enter the time elapsed(in sec): ");
+        float TimeElapsed = input.nextFloat();
+        float SpeedOfLight = 1100; // ft per sec
+        float Feet = (TimeElapsed * SpeedOfLight); // ft
+        float Miles = (Feet / 5280f); // ft to mile
+        System.out.printf("The lightning strike is approximately %.2f miles away.\n", Miles);
         System.out.println();
     }
 }
