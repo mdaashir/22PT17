@@ -4,12 +4,12 @@ public class Hello {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.print("Enter the number of Hydrogen(H), Carbon(C), Oxygen(O) atoms: ");
-        int hydrogenAtoms = input.nextInt();
-        int carbonAtoms = input.nextInt();
-        int oxygenAtoms = input.nextInt();
-        float molecularWeight = (1.0079f * hydrogenAtoms) + (12.011f * carbonAtoms) + (15.9994f * oxygenAtoms);
-        System.out.printf("The molecular weight of %dH %dC %dO = %.2f grams/mole\n",hydrogenAtoms, carbonAtoms, oxygenAtoms, molecularWeight );
+        System.out.print("Enter the coordinates of the point (x1, y1): ");
+        float[] Point1 = { input.nextFloat(), input.nextFloat() };
+        System.out.print("Enter the coordinates of the point (x2, y2): ");
+        float[] Point2 = { input.nextFloat(), input.nextFloat() };
+        float Distance = (float)Math.sqrt(Math.pow((Point2[0] - Point1[0]), 2) + Math.pow((Point2[1] - Point1[1]), 2));
+        System.out.printf("The Distance between 2 points = %.2f units\n", Distance);
         System.out.println();
     }
 }
