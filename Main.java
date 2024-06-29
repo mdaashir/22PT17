@@ -9,8 +9,9 @@ public class Main {
         Interest();
         Sphere();
         Pizza();
-        convert();
         Lightning();
+        convert();
+        Slope();
     }
 
     private static void Temperature() {
