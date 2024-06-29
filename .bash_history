@@ -123,7 +123,7 @@ cd
 pwd
 ls
 ls -al
-rm  -r .vscode-server/
+rm -r .vscode-server/
 cat .mozilla/
 cat .mozilla
 cd .mozilla/
@@ -138,15 +138,15 @@ cd
 pwd
 ls -al
 rm -r .mozilla/
-cat .bash_logout 
+cat .bash_logout
 cat .bashrc
-cat .bash_profile 
+cat .bash_profile
 exit
 ls =al
 ls -al
-rm -r .vscode-server/ .wget-hsts 
+rm -r .vscode-server/ .wget-hsts
 ls -al
-rm -r .vscode-server/ .wget-hsts 
+rm -r .vscode-server/ .wget-hsts
 exit
 ls -al
 cd .vscode
