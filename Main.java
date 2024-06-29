@@ -10,9 +10,10 @@ public class Main {
         Sphere();
         Pizza();
         Lightning();
-        convert();
+        Convert();
         Slope();
         Weight();
+        Euclidean();
     }
 
     private static void Temperature() {
@@ -81,7 +82,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void convert() {
+    public static void Convert() {
         System.out.print("Enter the Distance between two cities(in Km): ");
         float Kilometers = input.nextFloat();
         float Miles = (0.621371f * Kilometers);
@@ -112,6 +113,16 @@ public class Main {
         float molecularWeight = (1.0079f * hydrogenAtoms) + (12.011f * carbonAtoms) + (15.9994f * oxygenAtoms);
         System.out.printf("The molecular weight of %dH %dC %dO = %.2f grams/mole\n", hydrogenAtoms, carbonAtoms,
                 oxygenAtoms, molecularWeight);
+        System.out.println();
+    }
+
+    public static void Euclidean() {
+        System.out.print("Enter the coordinates of the point (x1, y1): ");
+        float[] Point1 = { input.nextFloat(), input.nextFloat() };
+        System.out.print("Enter the coordinates of the point (x2, y2): ");
+        float[] Point2 = { input.nextFloat(), input.nextFloat() };
+        float Distance = (float) Math.sqrt(Math.pow((Point2[0] - Point1[0]), 2) + Math.pow((Point2[1] - Point1[1]), 2));
+        System.out.printf("The Distance between 2 points = %.2f units\n", Distance);
         System.out.println();
     }
 }
