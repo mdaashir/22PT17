@@ -12,6 +12,7 @@ public class Main {
         Lightning();
         convert();
         Slope();
+        Weight();
     }
 
     private static void Temperature() {
@@ -100,5 +101,17 @@ public class Main {
             float Slope = (Point2[1] - Point1[1]) / (Point2[0] - Point1[0]);
             System.out.printf("The slope of the line = %.2f\n", Slope);
         }
+        System.out.println();
+    }
+
+    public static void Weight() {
+        System.out.print("Enter the number of Hydrogen(H), Carbon(C), Oxygen(O) atoms: ");
+        int hydrogenAtoms = input.nextInt();
+        int carbonAtoms = input.nextInt();
+        int oxygenAtoms = input.nextInt();
+        float molecularWeight = (1.0079f * hydrogenAtoms) + (12.011f * carbonAtoms) + (15.9994f * oxygenAtoms);
+        System.out.printf("The molecular weight of %dH %dC %dO = %.2f grams/mole\n", hydrogenAtoms, carbonAtoms,
+                oxygenAtoms, molecularWeight);
+        System.out.println();
     }
 }
