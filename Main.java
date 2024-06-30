@@ -14,6 +14,7 @@ public class Main {
         Slope();
         Weight();
         Euclidean();
+        Gregorian();
     }
 
     private static void Temperature() {
@@ -123,6 +124,19 @@ public class Main {
         float[] Point2 = { input.nextFloat(), input.nextFloat() };
         float Distance = (float) Math.sqrt(Math.pow((Point2[0] - Point1[0]), 2) + Math.pow((Point2[1] - Point1[1]), 2));
         System.out.printf("The Distance between 2 points = %.2f units\n", Distance);
+        System.out.println();
+    }
+
+    public static void Gregorian() {
+        System.out.print("Enter a 4-digit year: ");
+        int Year = input.nextInt();
+        if (Year < 1000 || Year > 9999) {
+            System.out.print("Please enter a valid 4-digit year.");
+            return;
+        }
+        int Century = Year / 100;
+        int Epact = (8 + (Century / 4) - Century + ((8 * Century + 13) / 25) + 11 * (Year % 19)) % 30;
+        System.out.println("The Gregorian epact for the year " + Year + " is: " + Epact);
         System.out.println();
     }
 }
