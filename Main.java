@@ -20,6 +20,7 @@ public class Main {
         Population();
         Driving();
         Savings();
+        Bmi();
     }
 
     private static void Temperature() {
@@ -172,7 +173,7 @@ public class Main {
         int NumberofDozens = NumberOfEggs / 12;
         int NumberofLeftOver = NumberOfEggs % 12;
         float Price = (3.25f * NumberofDozens) + (0.45f * NumberofLeftOver);
-        System.out.printf("Total price of eggs = $%.2f ", Price);
+        System.out.printf("Total price of eggs = $%.2f", Price);
         System.out.println();
     }
 
@@ -222,6 +223,18 @@ public class Main {
             AmountValue = (SavingsAmount + AmountValue) * (1 + MonthlyRate);
         }
         System.out.printf("Your savings amount after %d months = $%.3f", Months, AmountValue);
+        System.out.println();
+    }
+
+    public static void Bmi() {
+        System.out.print("Enter the weight(in pounds): ");
+        float Pounds = input.nextFloat();
+        System.out.print("Enter the Height(in inches): ");
+        float Inches = input.nextFloat();
+        float Weight = 0.45359237f * Pounds; // kilograms
+        float Height = 0.0254f * Inches; // meters
+        float BMI = Weight / (Height * Height);
+        System.out.printf("BMI: %.2f", BMI);
         System.out.println();
     }
 }
