@@ -15,6 +15,7 @@ public class Main {
         Weight();
         Euclidean();
         Gregorian();
+        Racer();
     }
 
     private static void Temperature() {
@@ -137,6 +138,27 @@ public class Main {
         int Century = Year / 100;
         int Epact = (8 + (Century / 4) - Century + ((8 * Century + 13) / 25) + 11 * (Year % 19)) % 30;
         System.out.println("The Gregorian epact for the year " + Year + " is: " + Epact);
+        System.out.println();
+    }
+
+    public static void Racer() {
+        // System.out.print("Enter number of racers: ");
+        // int NumberOfRacers = input.nextInt();
+        int NumberOfRacers = 5;
+        int[] SpeedOfRacers = new int[NumberOfRacers];
+        int Average = 0;
+        System.out.print("Enter the speed of " + NumberOfRacers + " racer: ");
+        for (int i = 0; i < NumberOfRacers; i++) {
+            SpeedOfRacers[i] = input.nextInt();
+            Average += SpeedOfRacers[i];
+        }
+        Average /= NumberOfRacers;
+        // System.out.println("Average speed: " + Average + " kmph");
+        System.out.println("Speed of qualifying racers: ");
+        for (int i = 0; i < NumberOfRacers; i++) {
+            if (SpeedOfRacers[i] >= Average)
+                System.out.println("Racer " + (i + 1) + " = " + SpeedOfRacers[i] + " kmph");
+        }
         System.out.println();
     }
 }
