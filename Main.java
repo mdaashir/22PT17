@@ -16,6 +16,7 @@ public class Main {
         Euclidean();
         Gregorian();
         Racer();
+        Egg();
     }
 
     private static void Temperature() {
@@ -159,6 +160,16 @@ public class Main {
             if (SpeedOfRacers[i] >= Average)
                 System.out.println("Racer " + (i + 1) + " = " + SpeedOfRacers[i] + " kmph");
         }
+        System.out.println();
+    }
+
+    public static void Egg() {
+        System.out.print("Enter number of eggs: ");
+        int NumberOfEggs = input.nextInt();
+        int NumberofDozens = NumberOfEggs / 12;
+        int NumberofLeftOver = NumberOfEggs % 12;
+        float Price = (3.25f * NumberofDozens) + (0.45f * NumberofLeftOver);
+        System.out.printf("Total price of eggs = $%.2f ", Price);
         System.out.println();
     }
 }
