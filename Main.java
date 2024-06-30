@@ -22,6 +22,7 @@ public class Main {
         Savings();
         Bmi();
         WindChill();
+        Investment();
     }
 
     private static void Temperature() {
@@ -255,6 +256,18 @@ public class Main {
         double WindChill = 35.74f + 0.6215f * Temperature - 35.75f * Math.pow(WindSpeed, 0.16f)
                 + 0.4275f * Temperature * Math.pow(WindSpeed, 0.16f);
         System.out.printf("The wind-chill temperature is: %.2f°F", WindChill);
+        System.out.println();
+    }
+
+    public static void Investment() {
+        System.out.print("Enter the investment amount: ");
+        float InvestmentAmount = input.nextFloat();
+        System.out.print("Enter the annual interest rate: ");
+        float MonthlyRate = (input.nextFloat() / 100) / 12;
+        System.out.print("Enter the number of years: ");
+        int NumberOfMonths = input.nextInt() * 12;
+        double FutureValue = InvestmentAmount * Math.pow((1 + MonthlyRate), NumberOfMonths);
+        System.out.printf("The future investment amount = $%.2f", FutureValue);
         System.out.println();
     }
 }
