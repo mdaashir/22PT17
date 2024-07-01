@@ -10,6 +10,10 @@ public class Main {
     }
 
     public static void Factorial() {
-
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        Function = n -> n == 0 ? 1 : n * Function.applyAsInt(n - 1);
+        System.out.print("Factorial of " + Number + " is " + Function.applyAsInt(Number));
+        System.out.println();
     }
 }
