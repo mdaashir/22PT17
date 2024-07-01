@@ -3,7 +3,6 @@ import java.util.function.IntUnaryOperator;
 
 public class Hello {
     private static Scanner input = new Scanner(System.in);
-
     private static IntUnaryOperator Function = null;
 
     public static void main(String[] args) {
