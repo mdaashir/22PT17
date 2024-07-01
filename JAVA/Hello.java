@@ -1,16 +1,23 @@
 import java.util.Scanner;
-import java.util.function.IntUnaryOperator;
 
 public class Hello {
     private static Scanner input = new Scanner(System.in);
 
-    private static IntUnaryOperator Function = null;
-
     public static void main(String[] args) {
-        System.out.print("Enter a number: ");
+        System.out.print("Enter a five-digit number: ");
         int Number = input.nextInt();
-        Function = n -> n == 0 ? 1 : n * Function.applyAsInt(n - 1);
-        System.out.print("Factorial of " + Number + " is " + Function.applyAsInt(Number));
+        while (Number < 10000 || Number > 99999) {
+            System.out.print("Invalid input. Please enter a five-digit number: ");
+            Number = input.nextInt();
+        }
+        int[] Digits = new int[5];
+        for (int i = 0; i < 5; i++) {
+            Digits[i] = Number % 10;
+            Number /= 10;
+        }
+        for (int i : Digits) {
+            System.out.print(i + "\t");
+        }
         System.out.println();
     }
 }
