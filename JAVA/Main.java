@@ -9,6 +9,7 @@ public class Main {
         Factorial();
         Solve();
         NumberName();
+        SumAverage();
     }
 
     private static void Factorial() {
@@ -61,6 +62,15 @@ public class Main {
             System.out.print("NINE");
         else
             System.out.print("NONE");
+        System.out.println();
+    }
+
+    private static void SumAverage() {
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        long Sum = (Number * (Number + 1)) / 2;
+        float Average = ((float) Sum / Number);
+        System.out.printf("The sum of the first %d natural numbers is %d and average is %.2f", Number, Sum, Average);
         System.out.println();
     }
 }
