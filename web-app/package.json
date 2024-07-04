@@ -1,0 +1,13 @@
+{
+	"dependencies": {
+		"@types/react-bootstrap": "^0.32.36",
+		"body-parser": "^1.20.2",
+		"bootstrap": "^5.3.3",
+		"cors": "^2.8.5",
+		"express": "^4.18.3",
+		"pg": "^8.11.3",
+		"pg-hstore": "^2.3.4",
+		"react-bootstrap": "^2.10.1",
+		"sequelize": "^6.37.1"
+	}
+}
