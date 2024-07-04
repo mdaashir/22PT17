@@ -1,5 +1,57 @@
 [
     {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -23,15 +75,6 @@
         "description": "os",
         "isExtraImport": true,
         "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "math",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
         "documentation": {}
     },
     {
@@ -67,6 +110,168 @@
         "description": "urllib.parse",
         "isExtraImport": true,
         "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "cost",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def cost(X, y, w, b):\n    m = len(X)\n    cost = 0\n    for i in range(m):\n        f_wb = w * X[i] + b\n        cost += (f_wb - y[i]) ** 2\n    total_cost = cost / (2 * m)\n    return total_cost\ndef compute_gradient(X, y, w, b):\n    dj_dw = 0",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "compute_gradient",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def compute_gradient(X, y, w, b):\n    dj_dw = 0\n    dj_db = 0\n    m = len(X)\n    for i in range(m):\n        f_wb = w * X[i] + b\n        dj_dw += (f_wb - y[i]) * X[i]\n        dj_db += f_wb - y[i]\n    dj_dw /= m\n    dj_db /= m",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "gradient_descent",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def gradient_descent(\n    X, y, w_in, b_in, alpha, num_iters, cost_function, gradient_function\n):\n    j_history = []\n    p_history = []\n    w = w_in\n    b = b_in\n    for i in range(num_iters):\n        dj_dw, dj_db = gradient_function(X, y, w, b)\n        w = w - alpha * dj_dw",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "plot_regression_line",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def plot_regression_line(X, y, w, b):\n    plt.scatter(X, y, color=\"blue\", label=\"Data points\")\n    y_pred = [w * x + b for x in X]\n    plt.plot(X, y_pred, color=\"red\", label=\"Regression line\")\n    plt.xlabel(\"X\")\n    plt.ylabel(\"Y\")\n    plt.legend()\n    plt.show()\n# Plot the final regression line\nplot_regression_line(X_test, Y_test, w_final, b_final)",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def mean_squared_error(y_true, y_pred):\n    m = len(y_true)\n    mse = np.sum((y_true - y_pred) ** 2) / m\n    return mse\ndef mean_absolute_error(y_true, y_pred):\n    m = len(y_true)\n    mae = np.sum(np.abs(y_true - y_pred)) / m\n    return mae\ny_pred = [w_final * x + b_final for x in X_test]\nmse = mean_squared_error(Y_test, y_pred)",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "mean_absolute_error",
+        "kind": 2,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "def mean_absolute_error(y_true, y_pred):\n    m = len(y_true)\n    mae = np.sum(np.abs(y_true - y_pred)) / m\n    return mae\ny_pred = [w_final * x + b_final for x in X_test]\nmse = mean_squared_error(Y_test, y_pred)\nmae = mean_absolute_error(Y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\nprint(f\"Mean Absolute Error: {mae}\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "df = pd.read_csv(\"content/Salary_dataset.csv\")\ndf.shape[0]\ndf.plot(x=\"YearsExperience\", y=\"Salary\", style=\"o\")\nplt.title(\"Salary vs Experience\")\nplt.xlabel(\"Years of Experience\")\nplt.ylabel(\"Salary\")\nplt.show()\nX = df[\"YearsExperience\"].values.reshape(-1, 1)\nY = df[\"Salary\"].values\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "X = df[\"YearsExperience\"].values.reshape(-1, 1)\nY = df[\"Salary\"].values\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)\nlr = LinearRegression()\nlr.fit(X_test, Y_test)\nprint(X_test)\nprint(Y_test)\nprint(lr.score(X_test, Y_test))\nY_pred = lr.predict(X_test)\nplt.scatter(X_test, Y_test, color=\"red\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "Y",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "Y = df[\"Salary\"].values\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)\nlr = LinearRegression()\nlr.fit(X_test, Y_test)\nprint(X_test)\nprint(Y_test)\nprint(lr.score(X_test, Y_test))\nY_pred = lr.predict(X_test)\nplt.scatter(X_test, Y_test, color=\"red\")\nplt.plot(X_test, Y_pred, color=\"blue\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "lr",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "lr = LinearRegression()\nlr.fit(X_test, Y_test)\nprint(X_test)\nprint(Y_test)\nprint(lr.score(X_test, Y_test))\nY_pred = lr.predict(X_test)\nplt.scatter(X_test, Y_test, color=\"red\")\nplt.plot(X_test, Y_pred, color=\"blue\")\nplt.title(\"Salary vs Experience\")\nplt.xlabel(\"Years of Experience\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "Y_pred",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "Y_pred = lr.predict(X_test)\nplt.scatter(X_test, Y_test, color=\"red\")\nplt.plot(X_test, Y_pred, color=\"blue\")\nplt.title(\"Salary vs Experience\")\nplt.xlabel(\"Years of Experience\")\nplt.ylabel(\"Salary\")\ndef cost(X, y, w, b):\n    m = len(X)\n    cost = 0\n    for i in range(m):",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "w_init",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "w_init = 0\nb_init = 0\niterations = 10000\ntmp_alpha = 0.01\nw_final, b_final = gradient_descent(\n    X_test, Y_test, w_init, b_init, tmp_alpha, iterations, cost, compute_gradient\n)\nprint(w_final, b_final)\ndef plot_regression_line(X, y, w, b):\n    plt.scatter(X, y, color=\"blue\", label=\"Data points\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "b_init",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "b_init = 0\niterations = 10000\ntmp_alpha = 0.01\nw_final, b_final = gradient_descent(\n    X_test, Y_test, w_init, b_init, tmp_alpha, iterations, cost, compute_gradient\n)\nprint(w_final, b_final)\ndef plot_regression_line(X, y, w, b):\n    plt.scatter(X, y, color=\"blue\", label=\"Data points\")\n    y_pred = [w * x + b for x in X]",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "iterations",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "iterations = 10000\ntmp_alpha = 0.01\nw_final, b_final = gradient_descent(\n    X_test, Y_test, w_init, b_init, tmp_alpha, iterations, cost, compute_gradient\n)\nprint(w_final, b_final)\ndef plot_regression_line(X, y, w, b):\n    plt.scatter(X, y, color=\"blue\", label=\"Data points\")\n    y_pred = [w * x + b for x in X]\n    plt.plot(X, y_pred, color=\"red\", label=\"Regression line\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "tmp_alpha",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "tmp_alpha = 0.01\nw_final, b_final = gradient_descent(\n    X_test, Y_test, w_init, b_init, tmp_alpha, iterations, cost, compute_gradient\n)\nprint(w_final, b_final)\ndef plot_regression_line(X, y, w, b):\n    plt.scatter(X, y, color=\"blue\", label=\"Data points\")\n    y_pred = [w * x + b for x in X]\n    plt.plot(X, y_pred, color=\"red\", label=\"Regression line\")\n    plt.xlabel(\"X\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "y_pred",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "y_pred = [w_final * x + b_final for x in X_test]\nmse = mean_squared_error(Y_test, y_pred)\nmae = mean_absolute_error(Y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\nprint(f\"Mean Absolute Error: {mae}\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "mse",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "mse = mean_squared_error(Y_test, y_pred)\nmae = mean_absolute_error(Y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\nprint(f\"Mean Absolute Error: {mae}\")",
+        "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "mae",
+        "kind": 5,
+        "importPath": "ML.ML_task_1",
+        "description": "ML.ML_task_1",
+        "peekOfCode": "mae = mean_absolute_error(Y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\nprint(f\"Mean Absolute Error: {mae}\")",
+        "detail": "ML.ML_task_1",
         "documentation": {}
     },
     {
