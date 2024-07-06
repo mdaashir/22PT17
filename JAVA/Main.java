@@ -12,6 +12,7 @@ public class Main {
         SumAverage();
         Fibonacci();
         Palindrome();
+        Cube();
     }
 
     private static void Factorial() {
@@ -122,6 +123,15 @@ public class Main {
             System.out.print("The number is a palindrome");
         } else {
             System.out.print("The number is not a palindrome");
+        }
+        System.out.println();
+    }
+
+    public static void Cube() {
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        for (int i = 1; i <= Number; i++) {
+            System.out.print((int) Math.pow(i, 3) + " ");
         }
         System.out.println();
     }
