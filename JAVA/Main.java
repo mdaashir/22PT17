@@ -16,6 +16,7 @@ public class Main {
         MaximumCount();
         TriPattern();
         Table();
+        DataPlan();
     }
 
     private static void Factorial() {
@@ -187,6 +188,32 @@ public class Main {
             }
             System.out.println();
             i++;
+        }
+    }
+
+    public static void DataPlan() {
+        System.out.print("Enter maximum talk minutes used per month: ");
+        int talkMinutes = input.nextInt();
+        System.out.print("Enter maximum text messages sent per month: ");
+        int textMessages = input.nextInt();
+        System.out.print("Enter maximum gigabytes of data used per month: ");
+        float gigabytesData = input.nextFloat();
+        if (talkMinutes < 500 && textMessages == 0 && gigabytesData == 0) {
+            System.out.println("Recommendation: Plan A ($49 per month)");
+        } else if (talkMinutes < 500 && textMessages > 0) {
+            System.out.println("Recommendation: Plan B ($55 per month)");
+        } else if (talkMinutes >= 500 && gigabytesData == 0) {
+            if (textMessages < 100) {
+                System.out.println("Recommendation: Plan C ($61 per month)");
+            } else {
+                System.out.println("Recommendation: Plan D ($70 per month)");
+            }
+        } else if (gigabytesData > 0 && gigabytesData <= 3) {
+            System.out.println("Recommendation: Plan E ($79 per month)");
+        } else if (gigabytesData > 3) {
+            System.out.println("Recommendation: Plan F ($87 per month)");
+        } else {
+            System.out.println("No suitable plan found for the entered criteria.");
         }
     }
 }
