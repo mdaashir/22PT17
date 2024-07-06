@@ -14,6 +14,7 @@ public class Main {
         Palindrome();
         Cube();
         TriPattern();
+        MaximumCount();
     }
 
     private static void Factorial() {
@@ -145,5 +146,22 @@ public class Main {
             Pattern = Pattern + i + " ";
             System.out.println(Pattern);
         }
+    }
+
+    public static void MaximumCount() {
+        int Count = 0, Max = Integer.MIN_VALUE;
+        System.out.print("Enter a numbers(0 to stop): ");
+        while (true) {
+            int Number = input.nextInt();
+            if (Number == 0)
+                break;
+            if (Number > Max) {
+                Max = Number;
+                Count = 1;
+            } else if (Max == Number) {
+                Count++;
+            }
+        }
+        System.out.printf("The largest is %d and the occurrence count for %d is %d.\n", Max, Max, Count);
     }
 }
