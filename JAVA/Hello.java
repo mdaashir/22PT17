@@ -8,9 +8,10 @@ public class Hello {
     public static void main(String[] args) {
         System.out.print("Enter a number: ");
         int Number = input.nextInt();
+        String Pattern = new String();
         for (int i = 1; i <= Number; i++) {
-            System.out.print((int)Math.pow(i,3)+" ");
+            Pattern = Pattern + i + " ";
+            System.out.println(Pattern);
         }
-        System.out.println();
     }
 }
