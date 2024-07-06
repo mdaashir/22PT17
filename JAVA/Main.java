@@ -15,6 +15,7 @@ public class Main {
         Cube();
         MaximumCount();
         TriPattern();
+        Table();
     }
 
     private static void Factorial() {
@@ -165,4 +166,27 @@ public class Main {
         }
     }
 
+    public static void Table() {
+        System.out.print("Enter a size: ");
+        int Size = input.nextInt();
+        int i = 1;
+        System.out.print("* | ");
+        while (i <= Size) {
+            System.out.print(i + " | ");
+            i++;
+        }
+        System.out.println();
+        System.out.println("--------------------------------------------");
+        i = 1;
+        while (i <= Size) {
+            int j = 1;
+            System.out.print(i + " | ");
+            while (j <= Size) {
+                System.out.print(i * j + "   ");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+    }
 }
