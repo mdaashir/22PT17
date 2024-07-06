@@ -8,16 +8,8 @@ public class Hello {
     public static void main(String[] args) {
         System.out.print("Enter a number: ");
         int Number = input.nextInt();
-        int Org = Number;
-        int Rev = 0;
-        while (Number > 0) {
-            Rev = (Rev * 10 + Number % 10);
-            Number /= 10;
-        }
-        if (Rev == Org) {
-            System.out.print("The number is a palindrome");
-        } else {
-            System.out.print("The number is not a palindrome");
+        for (int i = 1; i <= Number; i++) {
+            System.out.print((int)Math.pow(i,3)+" ");
         }
         System.out.println();
     }
