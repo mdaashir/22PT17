@@ -13,6 +13,7 @@ public class Main {
         Fibonacci();
         Palindrome();
         Cube();
+        TriPattern();
     }
 
     private static void Factorial() {
@@ -134,5 +135,15 @@ public class Main {
             System.out.print((int) Math.pow(i, 3) + " ");
         }
         System.out.println();
+    }
+
+    public static void TriPattern() {
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        String Pattern = new String();
+        for (int i = 1; i <= Number; i++) {
+            Pattern = Pattern + i + " ";
+            System.out.println(Pattern);
+        }
     }
 }
