@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 /*
 // Problem-1
 int loan(float cost,float pay)
@@ -26,28 +26,29 @@ int main()
 }
 */
 // Problem-2
-int pos(int stg,int cur)
+int pos(int stg, int cur)
 {
-    int ans=0;
-    if(stg==0)
+    int ans = 0;
+    if (stg == 0)
     {
-        cur+=0;
+        cur += 0;
     }
-    else if(stg==1)
+    else if (stg == 1)
     {
-        ans+=1;
+        ans += 1;
     }
     else
     {
-        ans-=stg;
-        pos(stg-1);
+        ans -= stg;
+        pos(stg - 1, cur);
     }
+    return ans;
 }
 int main()
 {
-    int stage,current;
+    int stage, current = 0;
     printf("Enter the number of stages: ");
-    scanf("%d",&stage);
-    printf("The position of the dancer: %d",pos(stage,current));
-    return(0);
+    scanf("%d", &stage);
+    printf("The position of the dancer: %d", pos(stage, current));
+    return (0);
 }

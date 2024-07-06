@@ -1,7 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+// #include <string>
 #include <strings.h>
+#include <string.h>
+
 /*
 // Problem-1
 int loan(float cost,float pay)
@@ -86,57 +88,65 @@ int main()
 }
 */
 
-void reverse(string &str) {
-    int i = 0;
-    int j = str.length() - 1;
-    while (i < j) {
-        char temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
-        i++;
-        j--;
-    }
-}
+// void reverse(string &str)
+// {
+//     int i = 0;
+//     int j = str.length() - 1;
+//     while (i < j)
+//     {
+//         char temp = str[i];
+//         str[i] = str[j];
+//         str[j] = temp;
+//         i++;
+//         j--;
+//     }
+// }
 
-int main()
-{
-    int n,i;
-    scanf("%d",&n);
-    char domains[n][100];
-    for (i=0;i<n;i++)
-    {
-        scanf("%s",domains[i]);
-    }
-    char reverseDomains[n][100];
-    for (i=0;i<n;i++)
-    {
-        char domain[100] = domains[i];
-        char reverseDomain[100];
-        int j = strlen(domain)- 1;
-        while (j>=0)
-        {
-            while(j>= 0 && domain[j] != '.')
-            {
-                reverseDomain += domain[j--];
-            }
-            if (j >= 0) {
-                reverseDomain += '.';
-                j--;
-            }
-        }
-        reverse(reverseDomain);
-        reverseDomains[i] = reverseDomain;
-    }
-    sort(reverseDomains.begin(), reverseDomains.end());
-    for (int i = 0; i < n; i++) {
-        string reverseDomain = reverseDomains[i];
-        for (char c : reverseDomain) {
-            if (c == '.') {
-                cout << ".";
-            } else {
-                cout << c;
-            }
-        }
-        cout << endl;
-    }
-}
+// int main()
+// {
+//     int n, i;
+//     scanf("%d", &n);
+//     char domains[n][100];
+//     for (i = 0; i < n; i++)
+//     {
+//         scanf("%s", domains[i]);
+//     }
+//     char reverseDomains[n][100];
+//     for (i = 0; i < n; i++)
+//     {
+//         char domain[100] = domains[i];
+//         char reverseDomain[100];
+//         int j = strlen(domain) - 1;
+//         while (j >= 0)
+//         {
+//             while (j >= 0 && domain[j] != '.')
+//             {
+//                 reverseDomain += domain[j--];
+//             }
+//             if (j >= 0)
+//             {
+//                 reverseDomain += '.';
+//                 j--;
+//             }
+//         }
+//         reverse(reverseDomain);
+//         reverseDomains[i] = reverseDomain;
+//     }
+//     sort(reverseDomains.begin(), reverseDomains.end());
+//     for (int i = 0; i < n; i++)
+//     {
+//         string reverseDomain = reverseDomains[i];
+//         for (char c : reverseDomain)
+//         {
+//             if (c == '.')
+//             {
+//                 cout << ".";
+//             }
+//             else
+//             {
+//                 cout << c;
+//             }
+//         }
+//         cout << endl;
+//     }
+// }
