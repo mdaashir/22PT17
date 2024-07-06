@@ -11,6 +11,7 @@ public class Main {
         NumberName();
         SumAverage();
         Fibonacci();
+        Palindrome();
     }
 
     private static void Factorial() {
@@ -105,6 +106,23 @@ public class Main {
         for (int i : Fibo)
             sum += i;
         System.out.printf("The average of %d Fibonacci numbers is %f", Number, (float) sum / Number);
+        System.out.println();
+    }
+
+    public static void Palindrome() {
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        int Org = Number;
+        int Rev = 0;
+        while (Number > 0) {
+            Rev = (Rev * 10 + Number % 10);
+            Number /= 10;
+        }
+        if (Rev == Org) {
+            System.out.print("The number is a palindrome");
+        } else {
+            System.out.print("The number is not a palindrome");
+        }
         System.out.println();
     }
 }
