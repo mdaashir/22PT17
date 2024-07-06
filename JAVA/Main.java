@@ -13,8 +13,8 @@ public class Main {
         Fibonacci();
         Palindrome();
         Cube();
-        TriPattern();
         MaximumCount();
+        TriPattern();
     }
 
     private static void Factorial() {
@@ -138,16 +138,6 @@ public class Main {
         System.out.println();
     }
 
-    public static void TriPattern() {
-        System.out.print("Enter a number: ");
-        int Number = input.nextInt();
-        String Pattern = new String();
-        for (int i = 1; i <= Number; i++) {
-            Pattern = Pattern + i + " ";
-            System.out.println(Pattern);
-        }
-    }
-
     public static void MaximumCount() {
         int Count = 0, Max = Integer.MIN_VALUE;
         System.out.print("Enter a numbers(0 to stop): ");
@@ -164,4 +154,15 @@ public class Main {
         }
         System.out.printf("The largest is %d and the occurrence count for %d is %d.\n", Max, Max, Count);
     }
+
+    public static void TriPattern() {
+        System.out.print("Enter a number: ");
+        int Number = input.nextInt();
+        String Pattern = new String();
+        for (int i = 1; i <= Number; i++) {
+            Pattern = Pattern + i + " ";
+            System.out.println(Pattern);
+        }
+    }
+
 }
