@@ -44,24 +44,40 @@ public class Main {
         int Number = input.nextInt();
         if (Number == 1)
             System.out.print("ONE");
-        else if (Number == 2)
-            System.out.print("TWO");
-        else if (Number == 3)
-            System.out.print("THREE");
-        else if (Number == 4)
-            System.out.print("FOUR");
-        else if (Number == 5)
-            System.out.print("FIVE");
-        else if (Number == 6)
-            System.out.print("SIX");
-        else if (Number == 7)
-            System.out.print("SEVEN");
-        else if (Number == 8)
-            System.out.print("EIGHT");
-        else if (Number == 9)
-            System.out.print("NINE");
-        else
-            System.out.print("NONE");
+        else {
+            if (Number == 2)
+                System.out.print("TWO");
+            else {
+                if (Number == 3)
+                    System.out.print("THREE");
+                else {
+                    if (Number == 4)
+                        System.out.print("FOUR");
+                    else {
+                        if (Number == 5)
+                            System.out.print("FIVE");
+                        else {
+                            if (Number == 6)
+                                System.out.print("SIX");
+                            else {
+                                if (Number == 7)
+                                    System.out.print("SEVEN");
+                                else {
+                                    if (Number == 8)
+                                        System.out.print("EIGHT");
+                                    else {
+                                        if (Number == 9)
+                                            System.out.print("NINE");
+                                        else
+                                            System.out.print("NONE");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         System.out.println();
     }
 
@@ -71,7 +87,7 @@ public class Main {
         int Number = 100;
         long Sum = (Number * (Number + 1)) / 2;
         float Average = ((float) Sum / Number);
-        System.out.printf("The sum of the first %d natural numbers is %d and average is %.2f", Number, Sum, Average);
+        System.out.printf("\nThe sum of the first %d natural numbers is %d and average is %.2f", Number, Sum, Average);
         System.out.println();
     }
 }
