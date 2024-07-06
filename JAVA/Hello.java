@@ -6,12 +6,19 @@ public class Hello {
     private static IntUnaryOperator Function = null;
 
     public static void main(String[] args) {
-        System.out.print("Enter a number: ");
-        int Number = input.nextInt();
-        String Pattern = new String();
-        for (int i = 1; i <= Number; i++) {
-            Pattern = Pattern + i + " ";
-            System.out.println(Pattern);
+        int Count = 0, Max = Integer.MIN_VALUE;
+        System.out.print("Enter a numbers(0 to stop): ");
+        while (true) {
+            int Number = input.nextInt();
+            if (Number == 0)
+                break;
+            if (Number > Max) {
+                Max = Number;
+                Count = 1;
+            } else if (Max == Number) {
+                Count++;
+            }
         }
+        System.out.printf("The largest is %d and the occurrence count for %d is %d.\n", Max, Max, Count);
     }
 }
