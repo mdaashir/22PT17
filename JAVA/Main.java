@@ -5,6 +5,7 @@ import java.util.function.IntUnaryOperator;
 public class Main {
     private static Scanner input = new Scanner(System.in);
     private static IntUnaryOperator Function = null;
+    private static BiFunction<StringBuilder, Integer, Integer> Functions = null;
 
     public static void main(String[] args) {
         Factorial();
@@ -21,6 +22,7 @@ public class Main {
         NetPay();
         HarmonicSum();
         Employee();
+        ISBN();
         CozaLozaWoza();
         IncomeTax();
         BloodPressure();
@@ -331,6 +333,23 @@ public class Main {
         System.out.printf("The employee's contribution is: $%.2f\n", employeeContribution);
         System.out.printf("The employer's contribution is: $%.2f\n", employerContribution);
         System.out.printf("The total contribution is: $%.2f\n", employeeContribution + employerContribution);
+        System.out.println();
+    }
+
+    public static void ISBN() {
+        System.out.print("Enter the first 9 digits of the ISBN: ");
+        String first9String = input.nextLine();
+        StringBuilder Output = new StringBuilder(first9String);
+
+        Functions = (str, index) -> {
+            if (index < 0)
+                return 0;
+            int digit = str.charAt(index) - '0';
+            return (digit * (index + 2)) + Functions.apply(str, index - 1);
+        };
+        int sum = Functions.apply(Output.reverse(), Output.length() - 1);
+        String LastDigit = (((11 - (sum % 11)) == 10) ? "X" : String.valueOf(11 - (sum % 11)));
+        System.out.printf("The ISBN-10 is %09d%s", Integer.valueOf(first9String), LastDigit);
         System.out.println();
     }
 
