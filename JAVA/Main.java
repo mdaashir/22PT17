@@ -292,8 +292,9 @@ public class Main {
     }
 
     public static void Employee() {
-        System.out.print("Enter the monthly salary and age: $");
+        System.out.print("Enter the monthly salary: $");
         float salary = input.nextFloat();
+        System.out.print("Enter the age: ");
         int age = input.nextInt();
         float employeeRate = 0;
         float employerRate = 0;
