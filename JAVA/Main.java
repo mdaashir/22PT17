@@ -23,6 +23,7 @@ public class Main {
         Employee();
         CozaLozaWoza();
         IncomeTax();
+        BloodPressure();
     }
 
     private static void Factorial() {
@@ -373,5 +374,23 @@ public class Main {
         }
         System.out.printf("The income tax payable is: $%.2f\n", taxPayable);
         System.out.println();
+    }
+
+    public static void BloodPressure() {
+        while (true) {
+            System.out.print("Enter patient ID (-1 to stop): ");
+            int patientID = input.nextInt();
+            if (patientID == -1)
+                break;
+            System.out.print("Enter the number of readings for patient ID " + patientID + ": ");
+            int numReadings = input.nextInt();
+            float sum = 0;
+            for (int i = 0; i < numReadings; i++) {
+                System.out.print("Enter reading " + (i + 1) + ": ");
+                float reading = input.nextFloat();
+                sum += reading;
+            }
+            System.out.printf("For patient ID#: %d average BP = %.2f%n", patientID, sum / numReadings);
+        }
     }
 }
