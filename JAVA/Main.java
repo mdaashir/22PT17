@@ -24,6 +24,7 @@ public class Main {
         CozaLozaWoza();
         IncomeTax();
         BloodPressure();
+        IntToRoman();
     }
 
     private static void Factorial() {
@@ -392,5 +393,28 @@ public class Main {
             }
             System.out.printf("For patient ID#: %d average BP = %.2f%n", patientID, sum / numReadings);
         }
+    }
+
+    public static void IntToRoman() {
+
+        String[] Symbols = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+        int[] Values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+        while (true) {
+            System.out.print("Enter a number (99 to exit): ");
+            int Number = input.nextInt();
+            if (Number == 99)
+                break;
+
+            StringBuilder Roman = new StringBuilder();
+            for (int i = 0; i < Values.length && Number > 0; i++) {
+                while (Number >= Values[i]) {
+                    Roman.append(Symbols[i]);
+                    Number -= Values[i];
+                }
+            }
+            System.out.println("Roman numeral: " + Roman);
+        }
+        System.out.println();
     }
 }
