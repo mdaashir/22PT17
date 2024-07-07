@@ -99,7 +99,8 @@ public class Main {
         int Number = 100;
         long Sum = (Number * (Number + 1)) / 2;
         float Average = ((float) Sum / Number);
-        System.out.printf("\nThe sum of the first %d natural numbers is %d and average is %.2f", Number, Sum, Average);
+        System.out.printf("\nThe sum of the first %d natural numbers is %d and average is %.2f\n", Number, Sum,
+                Average);
         System.out.println();
     }
 
@@ -115,7 +116,7 @@ public class Main {
         int sum = 0;
         for (int i : Fibo)
             sum += i;
-        System.out.printf("The average of %d Fibonacci numbers is %f", Number, (float) sum / Number);
+        System.out.printf("The average of %d Fibonacci numbers is %f\n", Number, (float) sum / Number);
         System.out.println();
     }
 
@@ -129,9 +130,9 @@ public class Main {
             Number /= 10;
         }
         if (Rev == Org) {
-            System.out.print("The number is a palindrome");
+            System.out.println("The number is a palindrome");
         } else {
-            System.out.print("The number is not a palindrome");
+            System.out.println("The number is not a palindrome");
         }
         System.out.println();
     }
@@ -142,7 +143,7 @@ public class Main {
         for (int i = 1; i <= Number; i++) {
             System.out.print((int) Math.pow(i, 3) + " ");
         }
-        System.out.println();
+        System.out.println("\n");
     }
 
     public static void MaximumCount() {
@@ -160,6 +161,7 @@ public class Main {
             }
         }
         System.out.printf("The largest is %d and the occurrence count for %d is %d.\n", Max, Max, Count);
+        System.out.println();
     }
 
     public static void TriPattern() {
@@ -170,6 +172,7 @@ public class Main {
             Pattern = Pattern + i + " ";
             System.out.println(Pattern);
         }
+        System.out.println();
     }
 
     public static void Table() {
@@ -194,6 +197,7 @@ public class Main {
             System.out.println();
             i++;
         }
+        System.out.println();
     }
 
     public static void DataPlan() {
@@ -220,6 +224,7 @@ public class Main {
         } else {
             System.out.println("No suitable plan found for the entered criteria.");
         }
+        System.out.println();
     }
 
     public static void NetPay() {
@@ -273,6 +278,7 @@ public class Main {
             System.out.println("Retirement deduction: $0.00 (not participating)");
         }
         System.out.println("Net pay: $" + netPay);
+        System.out.println();
     }
 
     public static void HarmonicSum() {
@@ -290,6 +296,7 @@ public class Main {
         System.out.println("Sum from left to right: " + sumLTR);
         System.out.println("Sum from right to left: " + sumRTL);
         System.out.println("Absolute difference: " + Math.abs(sumLTR - sumRTL));
+        System.out.println();
     }
 
     public static void Employee() {
@@ -321,6 +328,7 @@ public class Main {
         System.out.printf("The employee's contribution is: $%.2f\n", employeeContribution);
         System.out.printf("The employer's contribution is: $%.2f\n", employerContribution);
         System.out.printf("The total contribution is: $%.2f\n", employeeContribution + employerContribution);
+        System.out.println();
     }
 
     public static void CozaLozaWoza() {
@@ -344,5 +352,6 @@ public class Main {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 }
