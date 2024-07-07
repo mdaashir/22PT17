@@ -337,6 +337,7 @@ public class Main {
     }
 
     public static void ISBN() {
+        input.nextLine(); // clear the buffer
         System.out.print("Enter the first 9 digits of the ISBN: ");
         String first9String = input.nextLine();
         StringBuilder Output = new StringBuilder(first9String);
@@ -349,7 +350,7 @@ public class Main {
         };
         int sum = Functions.apply(Output.reverse(), Output.length() - 1);
         String LastDigit = (((11 - (sum % 11)) == 10) ? "X" : String.valueOf(11 - (sum % 11)));
-        System.out.printf("The ISBN-10 is %09d%s", Integer.valueOf(first9String), LastDigit);
+        System.out.printf("The ISBN-10 is %09d%s%n", Integer.valueOf(first9String), LastDigit);
         System.out.println();
     }
 
@@ -410,8 +411,9 @@ public class Main {
                 float reading = input.nextFloat();
                 sum += reading;
             }
-            System.out.printf("For patient ID#: %d average BP = %.2f%n", patientID, sum / numReadings);
+            System.out.printf("For patient ID#: %d average BP = %.2f%n%n", patientID, sum / numReadings);
         }
+        System.out.println();
     }
 
     public static void IntToRoman() {
@@ -433,7 +435,7 @@ public class Main {
                 }
             }
             System.out.println("Roman numeral: " + Roman);
+            System.out.println();
         }
-        System.out.println();
     }
 }
