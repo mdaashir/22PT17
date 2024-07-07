@@ -8,20 +8,24 @@ public class Hello {
     private static BiFunction<StringBuilder, Integer, Integer> Functions = null;
 
     public static void main(String[] args) {
+
+        String[] symbols = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+        int[] values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
         while (true) {
-            System.out.print("Enter patient ID (-1 to stop): ");
-            int patientID = input.nextInt();
-            if (patientID == -1)
+            System.out.print("Enter a number (99 to exit): ");
+            int Number = input.nextInt();
+            if (Number == 99)
                 break;
-            System.out.print("Enter the number of readings for patient ID " + patientID + ": ");
-            int numReadings = input.nextInt();
-            float sum = 0;
-            for (int i = 0; i < numReadings; i++) {
-                System.out.print("Enter reading " + (i + 1) + ": ");
-                float reading = input.nextFloat();
-                sum += reading;
+
+            StringBuilder Roman = new StringBuilder();
+            for (int i = 0; i < values.length && Number > 0; i++) {
+                while (Number >= values[i]) {
+                    Roman.append(symbols[i]);
+                    Number -= values[i];
+                }
             }
-            System.out.printf("For patient ID#: %d average BP = %.2f%n", patientID, sum / numReadings);
+            System.out.println("Roman numeral: " + Roman);
         }
 
         // System.out.print("Enter the first 9 digits of the ISBN: ");
