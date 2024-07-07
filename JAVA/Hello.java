@@ -35,23 +35,21 @@ public class Hello {
         // int Number = input.nextInt();
         // System.out.println("Enter number per line: ");
         // int Line = input.nextInt();
-        int Number = 110, Line = 11;
-        for (int i = 1; i <= Number; i++) {
-            if (i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
-                if (i % 3 == 0)
-                    System.out.print("Coza");
-                if (i % 5 == 0)
-                    System.out.print("Loza");
-                if (i % 7 == 0)
-                    System.out.print("Woza");
-                System.out.printf("%-6s", "");
-            } else {
-                System.out.printf("%-6d", i);
-            }
 
-            if (i % Line == 0) {
-                System.out.println();
-            }
+        System.out.print("Enter the taxable income: $");
+        float taxableIncome = input.nextFloat();
+        float taxPayable = 0;
+        if (taxableIncome <= 20000.0f) {
+            taxPayable = taxableIncome * 0.0f;
+        } else if (taxableIncome <= 40000.0f) {
+            taxPayable = 20000.0f * 0.0f + (taxableIncome - 20000.0f) * 0.10f;
+        } else if (taxableIncome <= 60000.0f) {
+            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
+                    + (taxableIncome - 40000.0f) * 0.20f;
+        } else {
+            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
+                    + (60000.0f - 40000.0f) * 0.20f + (taxableIncome - 60000.0f) * 0.30f;
         }
+        System.out.printf("The income tax payable is: $%.2f\n", taxPayable);
     }
 }
