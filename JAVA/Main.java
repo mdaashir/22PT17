@@ -21,6 +21,7 @@ public class Main {
         NetPay();
         HarmonicSum();
         Employee();
+        CozaLozaWoza();
     }
 
     private static void Factorial() {
@@ -320,5 +321,28 @@ public class Main {
         System.out.printf("The employee's contribution is: $%.2f\n", employeeContribution);
         System.out.printf("The employer's contribution is: $%.2f\n", employerContribution);
         System.out.printf("The total contribution is: $%.2f\n", employeeContribution + employerContribution);
+    }
+
+    public static void CozaLozaWoza() {
+        // System.out.println("Enter number per line: ");
+        // int Line = input.nextInt();
+        int Number = 110, Line = 11;
+        for (int i = 1; i <= Number; i++) {
+            if (i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
+                if (i % 3 == 0)
+                    System.out.print("Coza");
+                if (i % 5 == 0)
+                    System.out.print("Loza");
+                if (i % 7 == 0)
+                    System.out.print("Woza");
+                System.out.printf("%-6s", "");
+            } else {
+                System.out.printf("%-6d", i);
+            }
+
+            if (i % Line == 0) {
+                System.out.println();
+            }
+        }
     }
 }
