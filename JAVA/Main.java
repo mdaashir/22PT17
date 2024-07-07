@@ -30,10 +30,11 @@ public class Main {
     }
 
     private static void Factorial() {
-        System.out.print("Enter a number: ");
-        int Number = input.nextInt();
+        // System.out.print("Enter a number: ");
+        // int Number = input.nextInt();
         Function = n -> n == 0 ? 1 : n * Function.applyAsInt(n - 1);
-        System.out.println("Factorial of " + Number + " is " + Function.applyAsInt(Number));
+        for (int i = 1; i <= 10; i++)
+            System.out.println("Factorial of " + i + " is " + Function.applyAsInt(i));
         System.out.println();
     }
 
@@ -119,9 +120,11 @@ public class Main {
         Function = n -> (n < 2) ? Fibo[n] : (Fibo[n] = Function.applyAsInt(n - 1) + Function.applyAsInt(n - 2));
         Function.applyAsInt(Number - 1);
         int sum = 0;
-        for (int i : Fibo)
+        for (int i : Fibo){
+            System.out.print(i + " ");
             sum += i;
-        System.out.printf("The average of %d Fibonacci numbers is %f\n", Number, (float) sum / Number);
+        }
+        System.out.printf("%nThe average of %d Fibonacci numbers is %f%n", Number, (float) sum / Number);
         System.out.println();
     }
 
