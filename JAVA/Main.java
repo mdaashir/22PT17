@@ -22,6 +22,7 @@ public class Main {
         HarmonicSum();
         Employee();
         CozaLozaWoza();
+        IncomeTax();
     }
 
     private static void Factorial() {
@@ -352,6 +353,25 @@ public class Main {
                 System.out.println();
             }
         }
+        System.out.println();
+    }
+
+    public static void IncomeTax() {
+        System.out.print("Enter the taxable income: $");
+        float taxableIncome = input.nextFloat();
+        float taxPayable = 0;
+        if (taxableIncome <= 20000.0f) {
+            taxPayable = taxableIncome * 0.0f;
+        } else if (taxableIncome <= 40000.0f) {
+            taxPayable = 20000.0f * 0.0f + (taxableIncome - 20000.0f) * 0.10f;
+        } else if (taxableIncome <= 60000.0f) {
+            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
+                    + (taxableIncome - 40000.0f) * 0.20f;
+        } else {
+            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
+                    + (60000.0f - 40000.0f) * 0.20f + (taxableIncome - 60000.0f) * 0.30f;
+        }
+        System.out.printf("The income tax payable is: $%.2f\n", taxPayable);
         System.out.println();
     }
 }
