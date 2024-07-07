@@ -8,6 +8,22 @@ public class Hello {
     private static BiFunction<StringBuilder, Integer, Integer> Functions = null;
 
     public static void main(String[] args) {
+        while (true) {
+            System.out.print("Enter patient ID (-1 to stop): ");
+            int patientID = input.nextInt();
+            if (patientID == -1)
+                break;
+            System.out.print("Enter the number of readings for patient ID " + patientID + ": ");
+            int numReadings = input.nextInt();
+            float sum = 0;
+            for (int i = 0; i < numReadings; i++) {
+                System.out.print("Enter reading " + (i + 1) + ": ");
+                float reading = input.nextFloat();
+                sum += reading;
+            }
+            System.out.printf("For patient ID#: %d average BP = %.2f%n", patientID, sum / numReadings);
+        }
+
         // System.out.print("Enter the first 9 digits of the ISBN: ");
         // String first9String = input.nextLine();
         // StringBuilder Output = new StringBuilder(first9String);
@@ -35,21 +51,5 @@ public class Hello {
         // int Number = input.nextInt();
         // System.out.println("Enter number per line: ");
         // int Line = input.nextInt();
-
-        System.out.print("Enter the taxable income: $");
-        float taxableIncome = input.nextFloat();
-        float taxPayable = 0;
-        if (taxableIncome <= 20000.0f) {
-            taxPayable = taxableIncome * 0.0f;
-        } else if (taxableIncome <= 40000.0f) {
-            taxPayable = 20000.0f * 0.0f + (taxableIncome - 20000.0f) * 0.10f;
-        } else if (taxableIncome <= 60000.0f) {
-            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
-                    + (taxableIncome - 40000.0f) * 0.20f;
-        } else {
-            taxPayable = 20000.0f * 0.0f + (40000.0f - 20000.0f) * 0.10f
-                    + (60000.0f - 40000.0f) * 0.20f + (taxableIncome - 60000.0f) * 0.30f;
-        }
-        System.out.printf("The income tax payable is: $%.2f\n", taxPayable);
     }
 }
