@@ -10,7 +10,6 @@ public class Hello {
     public static void main(String[] args) {
         System.out.print("Enter a Number: ");
         int Number = input.nextInt();
-        System.out.println("Aashir in Java branch");
         System.out.println(Number);
     }
 }
