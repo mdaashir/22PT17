@@ -1,5 +1,3 @@
-package Problem_Sheet_1;
-
 import java.util.Scanner;
 
 public class ProblemSheet_1 {

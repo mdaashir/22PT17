@@ -1,5 +1,3 @@
-package Problem_Sheet_2;
-
 import java.util.Scanner;
 import java.util.function.BiFunction;
 import java.util.function.IntUnaryOperator;
