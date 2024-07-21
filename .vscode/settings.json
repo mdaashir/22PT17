@@ -3,11 +3,10 @@
 	"terminal.integrated.fontFamily": "MesloLGS NF",
 	"git.confirmSync": false,
 	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"workbench.startupEditor": "none",
 	"quokka.automaticRestart": true,
-	"workbench.iconTheme": "vscode-icons",
+	"workbench.iconTheme": "helium-icon-theme",
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
@@ -100,7 +99,6 @@
 	"typescript.suggest.completeFunctionCalls": true,
 	"typescript.tsserver.web.typeAcquisition.enabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"vsicons.projectDetection.autoReload": true,
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
@@ -298,7 +296,6 @@
 		"default": "right",
 		"jupyter-notebook": "right"
 	},
-	"workbench.colorTheme": "Dracula Soft",
 	"go.toolsManagement.autoUpdate": true,
 	"git-graph.openToTheRepoOfTheActiveTextEditorDocument": true,
 	"git-graph.repository.commits.fetchAvatars": true,
@@ -321,5 +318,27 @@
 	"files.autoSave": "afterDelay",
 	"reactSnippets.settings.prettierEnabled": true,
 	"tailwindcss-intellisense.trace.server": "messages",
-	"tailwindCSS.emmetCompletions": true
+	"tailwindCSS.emmetCompletions": true,
+	"workbench.colorTheme": "SynthWave '84",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"[dotenv]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"gitlens.graph.minimap.additionalTypes": [
+		"stashes",
+		"localBranches",
+		"remoteBranches",
+		"pullRequests",
+		"tags"
+	],
+	"gitlens.graph.layout": "editor",
+	"gitlens.graph.showRemoteNames": true,
+	"gitlens.views.repositories.includeWorkingTree": true,
+	"gitlens.codeLens.scopes": ["document", "containers", "blocks"],
+	"workbench.startupEditor": "none",
+	"inlineChat.experimental.textButtons": true,
+	"terminal.external.linuxExec": "warp-terminal,x-terminal-emulator",
+	"editor.unicodeHighlight.invisibleCharacters": false
 }
