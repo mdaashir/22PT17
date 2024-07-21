@@ -1,7 +1,7 @@
 package Problem_sheet_3;
 
 public class Main {
-    public static void main(int Qno) {
+    public Main(int Qno) {
         switch (Qno) {
             case 1:
                 ReverseArray.main();
