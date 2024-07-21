@@ -153,3 +153,7 @@ cd .vscode
 ls -al
 pwd
 exit
+ls -al
+rm -rf portfolio/
+ls -al
+exit
