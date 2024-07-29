@@ -16,14 +16,14 @@ class MinimumGap {
     static void main() {
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("\n*** Minimun Gap in Array ***");
-            System.out.print("Enter the size of the array:");
+            System.out.print("Enter the size of the array: ");
             int SizeofArray = input.nextInt();
 
             if (SizeofArray < 0)
                 throw new Exception();
 
             int[] Array = new int[SizeofArray];
-            System.out.println("Enter the elements of the array:");
+            System.out.print("Enter the elements of the array: ");
             for (int i = 0; i < SizeofArray; i++) {
                 Array[i] = input.nextInt();
             }

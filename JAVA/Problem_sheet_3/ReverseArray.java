@@ -6,12 +6,12 @@ class ReverseArray {
     static void main() {
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("\n*** Reverse Array ***");
-            System.out.print("Enter a number of elements: ");
+            System.out.print("Enter the size of the array: ");
             int Number = input.nextInt();
             if (Number < 0)
                 throw new Exception();
             int[] Array = new int[Number];
-            System.out.printf("Enter a values: ");
+            System.out.printf("Enter the elements of the array: ");
             for (int i = 0; i < Number; i++) {
                 Array[i] = input.nextInt();
             }
