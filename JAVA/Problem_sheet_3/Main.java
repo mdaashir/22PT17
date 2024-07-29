@@ -6,6 +6,9 @@ public class Main {
             case 1:
                 ReverseArray.main();
                 break;
+            case 2:
+                MinimumGap.main();
+                break;
             default:
                 System.out.println("Invalid input Question number doesn't exists");
                 break;
