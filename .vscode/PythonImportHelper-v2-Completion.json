@@ -95,6 +95,87 @@
         "documentation": {}
     },
     {
+        "label": "compute_codeword",
+        "kind": 2,
+        "importPath": "CN.codeword_client",
+        "description": "CN.codeword_client",
+        "peekOfCode": "def compute_codeword(dataword, generator):\n   # Pad dataword with zeros to match length of generator\n   dataword_padded = dataword + '0' * (len(generator) - 1)\n   # Convert dataword to list of integers for easier manipulation\n   dataword_list = list(map(int, dataword_padded))\n   generator_list = list(map(int, generator))\n   # Perform CRC calculation (XOR)\n   for i in range(len(dataword)):\n       if dataword_list[i] == 1:\n           for j in range(len(generator)):",
+        "detail": "CN.codeword_client",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "CN.codeword_client",
+        "description": "CN.codeword_client",
+        "peekOfCode": "def main():\n    # Create a TCP/IP socket\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Connect the socket to the server\n    server_address = ('localhost', 12345)\n    print('Connecting to {} port {}'.format(*server_address))\n    client_socket.connect(server_address)\n    try:\n        # Ask user whether to send the data\n        # Get binary dataword and generator from user",
+        "detail": "CN.codeword_client",
+        "documentation": {}
+    },
+    {
+        "label": "compute_remainder",
+        "kind": 2,
+        "importPath": "CN.codeword_server",
+        "description": "CN.codeword_server",
+        "peekOfCode": "def compute_remainder(codeword, generator):\n    # Perform binary XOR addition between codeword and generator\n    remainder = \"\"\n    codeword_list = list(map(int, codeword))\n    generator_list = list(map(int, generator))\n    # Perform CRC calculation (XOR)\n    for i in range(len(codeword)- len(generator) + 1):\n        if codeword_list[i] == 1:\n            for j in range(len(generator)):\n                codeword_list[i + j] ^= generator_list[j]",
+        "detail": "CN.codeword_server",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "CN.codeword_server",
+        "description": "CN.codeword_server",
+        "peekOfCode": "def main():\n    # Create a TCP/IP socket\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Bind the socket to the port\n    server_address = ('localhost', 12345)\n    print('Starting up on {} port {}'.format(*server_address))\n    server_socket.bind(server_address)\n    # Listen for incoming connections\n    server_socket.listen(1)\n    while True:",
+        "detail": "CN.codeword_server",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_parity_bits",
+        "kind": 2,
+        "importPath": "CN.hamming_code",
+        "description": "CN.hamming_code",
+        "peekOfCode": "def calculate_parity_bits(m):\n    p = 0\n    while (2 ** p) < m + p + 1:\n        p += 1\n    return p\ndef position_parity_bits(data, p):\n    j = 0\n    k = 1\n    m = len(data)\n    result = ''",
+        "detail": "CN.hamming_code",
+        "documentation": {}
+    },
+    {
+        "label": "position_parity_bits",
+        "kind": 2,
+        "importPath": "CN.hamming_code",
+        "description": "CN.hamming_code",
+        "peekOfCode": "def position_parity_bits(data, p):\n    j = 0\n    k = 1\n    m = len(data)\n    result = ''\n    for i in range(1, m + p + 1):\n        if i == 2 ** j:\n            result += '0'\n            j += 1\n        else:",
+        "detail": "CN.hamming_code",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_parity_values",
+        "kind": 2,
+        "importPath": "CN.hamming_code",
+        "description": "CN.hamming_code",
+        "peekOfCode": "def calculate_parity_values(code, p):\n    n = len(code)\n    for i in range(p):\n        val = 0\n        for j in range(1, n + 1):\n            if j & (2  i) == (2  i):\n                val = val ^ int(code[-j])\n        code = code[:n-(2i)] + str(val) + code[n-(2i)+1:]\n    return code\ndef detect_correct_error(code, p):",
+        "detail": "CN.hamming_code",
+        "documentation": {}
+    },
+    {
+        "label": "detect_correct_error",
+        "kind": 2,
+        "importPath": "CN.hamming_code",
+        "description": "CN.hamming_code",
+        "peekOfCode": "def detect_correct_error(code, p):\n    n = len(code)\n    error_pos = 0\n    for i in range(p):\n        val = 0\n        for j in range(1, n + 1):\n            if j & (2  i) == (2  i):\n                val = val ^ int(code[-j])\n        error_pos += val * (2 ** i)\n    if error_pos:",
+        "detail": "CN.hamming_code",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "CN.hamming_code",
+        "description": "CN.hamming_code",
+        "peekOfCode": "def main():\n    original_data = input(\"Enter the data bits: \")\n    m = len(original_data)\n    p = calculate_parity_bits(m)\n    positioned_data = position_parity_bits(original_data, p)\n    hamming_code = calculate_parity_values(positioned_data, p)\n    print(f\"Hamming Code: {hamming_code}\")\n    received_code = input(\"Enter the received Hamming Code: \")\n    corrected_code = detect_correct_error(received_code, p)\n    print(f\"Corrected Hamming Code: {corrected_code}\")",
+        "detail": "CN.hamming_code",
+        "documentation": {}
+    },
+    {
         "label": "handle_session",
         "kind": 2,
         "importPath": "CN.server",
