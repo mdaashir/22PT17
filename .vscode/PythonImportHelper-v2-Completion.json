@@ -70,6 +70,40 @@
         "documentation": {}
     },
     {
+        "label": "turtle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "turtle",
+        "description": "turtle",
+        "detail": "turtle",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "ImageTk",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "system",
         "importPath": "os",
         "description": "os",
@@ -434,6 +468,105 @@
         "description": "ML.ML_task_1",
         "peekOfCode": "mae = mean_absolute_error(Y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\nprint(f\"Mean Absolute Error: {mae}\")",
         "detail": "ML.ML_task_1",
+        "documentation": {}
+    },
+    {
+        "label": "draw_line",
+        "kind": 2,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "def draw_line(x1, y1, x2, y2):\n    my_turtle.penup()\n    my_turtle.goto(x1, y1)\n    my_turtle.pendown()\n    my_turtle.goto(x2, y2)\n# Function to handle mouse click event\npoint1 = None\npoint2 = None\ndef on_click(event):\n    global point1, point2",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "on_click",
+        "kind": 2,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "def on_click(event):\n    global point1, point2\n    x = event.x\n    y = event.y\n    print(f\"Clicked at ({x}, {y})\")\n    # Draw a dot at the clicked position\n    my_turtle.penup()\n    my_turtle.goto(x-400, 300-y)\n    my_turtle.pendown()\n    my_turtle.dot(10, \"blue\")",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "clear_screen",
+        "kind": 2,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "def clear_screen():\n    my_turtle.clear()\n    my_turtle.penup()\n    my_turtle.home()\n    my_turtle.pendown()\n    global point1, point2\n    point1 = None\n    point2 = None\n# Bind the mouse click event to the on_click function\nlabel.bind(\"<Button-1>\", on_click)",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "window = tk.Tk()\nwindow.title(\"Orbital India Map\")\n# Load the India map image\ntry:\n    image = Image.open(\"Z:\\sem 5\\SCL Lab\\PACKAGE\\india_map.jpg\")\n    photo = ImageTk.PhotoImage(image)\nexcept FileNotFoundError:\n    print(\"Error: Image file not found\")\nexcept IOError:\n    print(\"Error: Unable to load image file\")",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "label",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "label = tk.Label(window, image=photo)\nlabel.image = photo  # Keep a reference to the image\nlabel.pack()\n# Create a new turtle screen\nscreen = turtle.Screen()\nscreen.setup(800, 600)\n# Create a new turtle object\nmy_turtle = turtle.Turtle()\n# Function to draw a line between two points\ndef draw_line(x1, y1, x2, y2):",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "label.image",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "label.image = photo  # Keep a reference to the image\nlabel.pack()\n# Create a new turtle screen\nscreen = turtle.Screen()\nscreen.setup(800, 600)\n# Create a new turtle object\nmy_turtle = turtle.Turtle()\n# Function to draw a line between two points\ndef draw_line(x1, y1, x2, y2):\n    my_turtle.penup()",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "screen = turtle.Screen()\nscreen.setup(800, 600)\n# Create a new turtle object\nmy_turtle = turtle.Turtle()\n# Function to draw a line between two points\ndef draw_line(x1, y1, x2, y2):\n    my_turtle.penup()\n    my_turtle.goto(x1, y1)\n    my_turtle.pendown()\n    my_turtle.goto(x2, y2)",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "my_turtle",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "my_turtle = turtle.Turtle()\n# Function to draw a line between two points\ndef draw_line(x1, y1, x2, y2):\n    my_turtle.penup()\n    my_turtle.goto(x1, y1)\n    my_turtle.pendown()\n    my_turtle.goto(x2, y2)\n# Function to handle mouse click event\npoint1 = None\npoint2 = None",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "point1",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "point1 = None\npoint2 = None\ndef on_click(event):\n    global point1, point2\n    x = event.x\n    y = event.y\n    print(f\"Clicked at ({x}, {y})\")\n    # Draw a dot at the clicked position\n    my_turtle.penup()\n    my_turtle.goto(x-400, 300-y)",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "point2",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "point2 = None\ndef on_click(event):\n    global point1, point2\n    x = event.x\n    y = event.y\n    print(f\"Clicked at ({x}, {y})\")\n    # Draw a dot at the clicked position\n    my_turtle.penup()\n    my_turtle.goto(x-400, 300-y)\n    my_turtle.pendown()",
+        "detail": "PACKAGE.trace_paper",
+        "documentation": {}
+    },
+    {
+        "label": "clear_button",
+        "kind": 5,
+        "importPath": "PACKAGE.trace_paper",
+        "description": "PACKAGE.trace_paper",
+        "peekOfCode": "clear_button = tk.Button(window, text=\"Clear Screen\", command=clear_screen)\nclear_button.pack()\n# Start the tkinter event loop\nwindow.mainloop()",
+        "detail": "PACKAGE.trace_paper",
         "documentation": {}
     },
     {
