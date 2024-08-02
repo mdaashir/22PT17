@@ -128,7 +128,7 @@
 		"editor.defaultFormatter": "ms-vscode.cpptools"
 	},
 	"debug.allowBreakpointsEverywhere": true,
-	"debug.autoExpandLazyVariables": true,
+	"debug.autoExpandLazyVariables": "on",
 	"debug.console.acceptSuggestionOnEnter": "on",
 	"debug.console.closeOnEnd": true,
 	"testing.coverageToolbarEnabled": true,
